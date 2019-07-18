@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <h1> Physic Game! </h1>
+    <p id = "interface"> Try and guess the letter I am thinking! </p>
+    <p> your letter </p>
+    <p id = "letterPressed"> </p>
+    
+    <script>
+            var letterOptions = ["a", "b", "c", "d", "e"];
+            var $letterPressed = document.getElementById("letterPressed");
+            var $interface = document.getElementById("interface");
+
+            var randomIndex = [Math.floor(Math.random() * letterOptions.length)];
+            var correctLetter = letterOptions[randomIndex];
+
+            console.log(correctLetter);
+
+            document.onkeyup = function(event) {
+                var userGuess = event.key;
+                console.log(userGuess)
+
+                $letterPressed.innerText = userGuess;
+
+                if(userGuess === correctLetter) {
+                    $interface.innerText = "Correct!";
+
+                    randomIndex = [Math.floor(Math.random() * letterOptions.length)];
+                    correctLetter = letterOptions[randomIndex];
+                    console.log(correctLetter);
+
+                }  
+                else {
+                    $interface.innerText = "Wrong!, Try again."
+                    
+                }
+            }
+        
+    </script>
+
+</body>
+</html>
