@@ -20,10 +20,14 @@
         var alphabet = generateAlphabet();
         var $letterPressed = document.getElementById("letterPressed");
         var $interface = document.getElementById("interface");
-        var randomIndex = alphabet[Math.floor(Math.random() * alphabet.length)];
-        var correctLetter = alphabet[randomIndex];
+        var correctLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 9;
+        var alreadyGuessedLetters = [];
+        
 
-        console.log(correctLetter);
+        // console.log(correctLetter);
 
         function generateAlphabet() {
             var alphabet = [];
@@ -32,25 +36,38 @@
             }
             return alphabet;
         }
+        generateAlphabet()
+
+        function reset () {
+        guessesLeft = 9;
+        alreadyGuessedLetters = [];
+        correctLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        console.log("Computer Guess: " + correctLetter)
+        }
+        
 
         document.onkeyup = function (event) {
             var userGuess = event.key;
+
+            console.log("Computer Guess: " + correctLetter)
             console.log(userGuess);
+        if (index){
 
             $letterPressed.innerText = userGuess;
 
-            if (userguess === correctLetter) {
+            if (userGuess === correctLetter) {
                 $interface.innerText = "WINNER!";
-
-                randomIndex = [Math.floor(Math.random() * letterOptions.length)];
-                correctLetter = letterOptions[randomIndex];
-                console.log(correctLetter);
+                wins++
+                reset();
             }
 
 
 
-            else {
+            if (guessesLeft ===0) {
                 $interface.innerText = "LOSER, Try Again!"
+                losses++
+                reset();
+            }
             }
         }
 
