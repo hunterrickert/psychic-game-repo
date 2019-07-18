@@ -10,12 +10,23 @@
 
 <body>
     <h3>Psychic Game</h3>
+    <p> Rule: guess the letter that the computer has selected.</p>
 
-    <p id="interface"> Rule: guess the letter that the computer has selected.</p>
+    <p id="interface"></p>
     <p>Your Guess: </p>
     <p id="letterPressed"></p>
 
+    <script>
+        var letterOptions = ["a", "b", "c", "d", "e", "f"];
+        var $letterPressed = document.getElementById("letterPressed");
+        var $interface = document.getElementById("interface");
+        var randomIndex = Math.Floor(Math.random()  * letterOption.length)];
+        var correctLetter = letterOptions[randomIndex];
     
+    
+    </script>
+
+
   
    
 </body>
