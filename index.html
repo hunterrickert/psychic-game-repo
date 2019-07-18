@@ -22,6 +22,27 @@
         var $interface = document.getElementById("interface");
         var randomIndex = Math.Floor(Math.random()  * letterOption.length)];
         var correctLetter = letterOptions[randomIndex];
+
+        console.log(correctLetter);
+
+        document.onkeyup = funtion(event) {
+            var userGuess = event.key; 
+            console.log(userGuess);
+
+
+            $letterPressed.innerText = userGuess;
+
+            if (userguess = correctLetter) {
+                $interface.innerText = "WINNER!";
+
+                randomIndex = [Math.floor(Math.random() * letterOptions.length)];
+                correctLetter = letterOptions[randomIndex];
+                console.log(correctLetter);
+            }
+            else {
+                $interface.innerText = "LOSER, Try Again!"
+            }
+        }
     
     
     </script>
