@@ -20,36 +20,36 @@
         var letterOptions = ["a", "b", "c", "d", "e", "f"];
         var $letterPressed = document.getElementById("letterPressed");
         var $interface = document.getElementById("interface");
-        var randomIndex = Math.Floor(Math.random()  * letterOption.length)];
+        var randomIndex = letterOptions[Math.Floor(Math.random() * letterOptions.length)];
         var correctLetter = letterOptions[randomIndex];
 
         console.log(correctLetter);
 
-        document.onkeyup = funtion(event) {
-            var userGuess = event.key; 
-            console.log(userGuess);
+        document.onkeyup = funtion(event)
+        var userGuess = event.key;
+        console.log(userGuess);
 
 
-            $letterPressed.innerText = userGuess;
+        $letterPressed.innerText = userGuess;
 
-            if (userguess = correctLetter) {
-                $interface.innerText = "WINNER!";
+        if (userguess = correctLetter) {
+            $interface.innerText = "WINNER!";
 
-                randomIndex = [Math.floor(Math.random() * letterOptions.length)];
-                correctLetter = letterOptions[randomIndex];
-                console.log(correctLetter);
-            }
-            else {
-                $interface.innerText = "LOSER, Try Again!"
-            }
+            randomIndex = [Math.floor(Math.random() * letterOptions.length)];
+            correctLetter = letterOptions[randomIndex];
+            console.log(correctLetter);
         }
-    
-    
+        else {
+            $interface.innerText = "LOSER, Try Again!"
+        }
+
+
+
     </script>
 
 
-  
-   
+
+
 </body>
 
 </html>

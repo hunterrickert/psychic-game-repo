@@ -14,12 +14,13 @@
     <p> your letter </p>
     <p id = "letterPressed"> </p>
     
+
     <script>
             var letterOptions = ["a", "b", "c", "d", "e"];
             var $letterPressed = document.getElementById("letterPressed");
             var $interface = document.getElementById("interface");
-
             var randomIndex = [Math.floor(Math.random() * letterOptions.length)];
+
             var correctLetter = letterOptions[randomIndex];
 
             console.log(correctLetter);
@@ -45,6 +46,5 @@
             }
         
     </script>
-
 </body>
 </html>
