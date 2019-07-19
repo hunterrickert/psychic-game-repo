@@ -16,6 +16,7 @@
     <p>Your Guess: </p>
     <p id="letterPressed"></p>
     <p id="alreadyGuessed"></p>
+    <p id="guessesLeft"></p>
     <p id="wins"></p>
     <p id="losses"></p>
 
@@ -27,6 +28,7 @@
         var wins = 0;
         var losses = 0;
         var guessesLeft = 9;
+        var $guessesLeft = document.getElementById("guessesLeft");
         var alreadyGuessed = [];
 
 
@@ -43,16 +45,18 @@
 
         function reset() {
             guessesLeft = 9;
-            alreadyGuessedLetters = [];
+            alreadyGuessed = [];
             correctLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
             console.log("Computer Guess: " + correctLetter)
             displayStats();
+            // $interface.innerText = "bannass"
         }
 //global function to update the game info stats to the screen 
         function displayStats () {
             document.getElementById("alreadyGuessed").textContent = "Letters Already Guessed: " + alreadyGuessed;
             document.getElementById("wins").textContent = "Wins: " + wins;
             document.getElementById("losses").textContent = "Losses: " + losses;
+            document.getElementById("guessesLeft").textContent = "Guesses Left: " + guessesLeft;
         }
 //invoking or firing /starting the displayStats function
 displayStats();
